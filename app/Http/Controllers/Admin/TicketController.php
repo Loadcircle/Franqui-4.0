@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Ticket;
 
 class TicketController extends Controller
 {
@@ -14,7 +15,9 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
+        $tickets = Ticket::paginate();
+
+        return view('admin.ticket.index', compact('tickets'));
     }
 
     /**
@@ -46,7 +49,7 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
