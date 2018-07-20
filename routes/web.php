@@ -30,6 +30,7 @@ Route::middleware(['auth',])->group(function(){
     Route::get('accesos',               'Admin\AccesosController@index')->name('accesos.index');
     Route::get('accesos/{id}',          'Admin\AccesosController@show')->name('accesos.show');
     Route::resource('agendas',          'Admin\AgendaController');
+    Route::resource('tickets',          'Admin\TicketController');
     
     //submodulos
     Route::get('smodulos/{pmodulo}',    'Admin\SubmoduloController@index')->name('smodulos');

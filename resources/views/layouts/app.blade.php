@@ -55,6 +55,11 @@
                             <a href="{{ route('accesos.index') }}" class="nav-link">Control de accesos</a>
                         </li>
                         @endcan
+                        @can('tickets.index')
+                        <li class="nav-item {{ active('tickets') }}">
+                            <a href="{{ route('tickets.index') }}" class="nav-link">Soporte</a>
+                        </li>
+                        @endcan
                         @can('agendas.index')
                         <li class="nav-item {{ active('agendas') }}">
                             <a href="{{ route('agendas.index') }}" class="nav-link">Agenda de reuniones</a>
