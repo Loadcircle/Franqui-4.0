@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Ticket;
+use App\Ticket_mensaje;
+use App\User;
 
 class TicketController extends Controller
 {
@@ -38,7 +40,13 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mensaje = Ticket_mensaje::create(['mensaje' => $request->mensaje, 'cliente' => $request->cliente, 'maker_id' => $request->maker_id, 'ticket_id' => $request->ticket_id]);
+        
+        $ticket = Ticket::find($request->ticket_id);
+
+        $ticket->update(['status' => $request->status]);
+
+        return redirect()->route('tickets.index')->with('info', 'Mensaje enviado con exito');
     }
 
     /**
@@ -49,7 +57,9 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        
+        $tickets = Ticket::find($id);
+        $clientes = User::where('id', '=', $tickets->empresa_id)->pluck('name', 'id');
+        return view('admin.ticket.show', compact('tickets', 'clientes'));
     }
 
     /**

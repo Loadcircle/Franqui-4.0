@@ -33,7 +33,7 @@
                 <th>
                     @can('tickets.show')             
                     <a href="{{ route('tickets.show', $ticket->id) }}" class="btn btn-sm btn-info">
-                        Responder    
+                        {{$ticket->status = 1 ? 'Responder' : 'Ver'}}
                     </a>
                     @endcan
                     @can('tickets.edit') 
