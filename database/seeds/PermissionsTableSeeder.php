@@ -11,7 +11,8 @@ class PermissionsTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {/*
+    {
+        /*
         //Empresas
         Permission::create([
             'name'          => 'Crear Empresas',
@@ -65,7 +66,7 @@ class PermissionsTableSeeder extends Seeder
             'slug'          => 'usuarios.destroy',
             'description'   => 'Elimina los usuarios',
         ]);
-        */
+
         //Roles
         
         Permission::create([
@@ -92,6 +93,91 @@ class PermissionsTableSeeder extends Seeder
             'name'          => 'Eliminar roles',
             'slug'          => 'roles.destroy',
             'description'   => 'Elimina los rol del sistema',
+        ]);
+        */
+        
+        //Servicios
+        
+        Permission::create([
+            'name'          => 'Navegar servicios',
+            'slug'          => 'servicios.index',
+            'description'   => 'Lista y navega todos los servicios del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Ver detalle de servicios',
+            'slug'          => 'servicios.show',
+            'description'   => 'Ver en detalle cada servicio',
+        ]);
+        Permission::create([
+            'name'          => 'Creacion de servicios',
+            'slug'          => 'servicios.create',
+            'description'   => 'Crear servicios del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Edicion de servicios',
+            'slug'          => 'servicios.edit',
+            'description'   => 'Editar todos los servicios del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Eliminar servicios',
+            'slug'          => 'servicios.destroy',
+            'description'   => 'Elimina los servicios del sistema',
+        ]);
+
+        //Modulos
+        
+        Permission::create([
+            'name'          => 'Navegar modulos',
+            'slug'          => 'modulos.index',
+            'description'   => 'Lista y navega todos los modulos del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Ver detalle de modulos',
+            'slug'          => 'modulos.show',
+            'description'   => 'Ver en detalle cada modulos',
+        ]);
+        Permission::create([
+            'name'          => 'Creacion de modulos',
+            'slug'          => 'modulos.create',
+            'description'   => 'Crear modulos del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Edicion de modulos',
+            'slug'          => 'modulos.edit',
+            'description'   => 'Editar todos los modulos del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Eliminar modulos',
+            'slug'          => 'modulos.destroy',
+            'description'   => 'Elimina los modulos del sistema',
+        ]);
+
+        //Herramientas
+        
+        Permission::create([
+            'name'          => 'Navegar herramientas',
+            'slug'          => 'herramientas.index',
+            'description'   => 'Lista y navega todas las herramientas del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Ver detalle de herramientas',
+            'slug'          => 'herramientas.show',
+            'description'   => 'Ver en detalle cada herramientas',
+        ]);
+        Permission::create([
+            'name'          => 'Creacion de herramientas',
+            'slug'          => 'herramientas.create',
+            'description'   => 'Crear herramientas del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Edicion de herramientas',
+            'slug'          => 'herramientas.edit',
+            'description'   => 'Editar todos los herramientas del sistema',
+        ]);
+        Permission::create([
+            'name'          => 'Eliminar herramientas',
+            'slug'          => 'herramientas.destroy',
+            'description'   => 'Elimina los herramientas del sistema',
         ]);
 
     }

@@ -30,7 +30,7 @@
                         @endif
                     </th>
                     <th>
-                        <img src="{{ asset('').'/'.$empresa->logo }}" alt="">
+                        <img width="50px" src="{{ asset('').$empresa->logo }}" alt="">
                     </th>
                     <th>
                         @can('empresas.show') 

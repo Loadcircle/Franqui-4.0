@@ -17,7 +17,7 @@
     {{ Form::label('logo', 'Logo de la empresa')}}<em>(La imagen debe ser de maximo 200x200 y 200kb)</em>
     {{ Form::file('logo', ['class' => 'form-control', 'id' => 'logo']) }}               
 </div>         
-<img class="img-fluid my-3" @if (isset($empresa->logo) && !empty($empresa->logo))src="{{ asset('').'/'.$empresa->logo}}"@else{ src="" }@endif id="profile-img-tag" style="max-width: 200px" />      
+<img class="img-fluid my-3" @if (isset($empresa->logo) && !empty($empresa->logo))src="{{ asset('').$empresa->logo}}"@else{ src="" }@endif id="profile-img-tag" style="max-width: 200px" />      
     {{ Form::hidden('maker_id', Auth::user()->id, ['class' => 'form-control']) }}
 <div class="form-group">
     {{ Form::submit('Guardar', ['class' => 'btn btn-sm btn-primary']) }}    

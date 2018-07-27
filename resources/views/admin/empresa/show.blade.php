@@ -3,7 +3,7 @@
 <div class="container">
     <h3>Detalles de la empresa {{$empresa->name}}</h3>
     @if (isset($empresa->logo) && !empty($empresa->logo))
-    <img class="img-fluid my-2" style="max-width: 200px" src="{{asset('').'/'.$empresa->logo}}" alt="">        
+    <img class="img-fluid my-2" style="max-width: 200px" src="{{asset('').$empresa->logo}}" alt="">        
     @endif
     <ul class="list-group">
         <li class="list-group-item"><strong>Razon Social:</strong> {{$empresa->razon_social}}</li>
